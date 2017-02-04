@@ -32,7 +32,7 @@
   "scripts": {
     "postinstall": "npm run reasonBuild",
     "buildHelp": "eval $(dependencyEnv) && nopam && rebuild --help",
-    "reasonBuild": "eval $(dependencyEnv) && nopam && rebuild -use-ocamlfind -cflag -w -cflag -40 -I src ./src/Test.native 2>&1 | berror.native --path-to-refmttype refmttype",
+    "reasonBuild": "eval $(dependencyEnv) && nopam && rebuild -use-ocamlfind -package ctypes -package ctypes.foreign -cflag -w -cflag -40 -I src ./src/Test.native 2>&1 | berror.native --path-to-refmttype refmttype",
     "reasonbuild": "npm run reasonBuild",
     "start": "eval $(dependencyEnv) && ./_build/src/Test.native",
     "clean": "rm -r ./_build",
@@ -48,6 +48,8 @@
     "ocamlBetterErrors": "0.1.0",
     "reason": "^ 1.6.0",
     "@opam-alpha/ocaml": "4.2.3",
+    "@opam-alpha/ctypes": "0.9.2",
+    "@opam-alpha/ctypes-foreign":"0.4.0",
     "dependency-env": "^0.1.1",
     "nopam": "^0.1.0"
   },
